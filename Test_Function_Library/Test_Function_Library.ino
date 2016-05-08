@@ -1,3 +1,13 @@
+/*---------------------------------------------------
+ * Welcome to Wyatt Johnson's Arduino Test Library version 0.9 Beta!
+ * Current Functions in the library
+ * initialize(int baud) - acts like Serial.begin(baud)
+ * enter(int enterNumber) - acts likes the enter button 
+ * pinHigh(pin) - acts like digitalWrite(pin, HIGH)
+ * pinLow(pin) - acts like digitalWrite(pin, LOW);
+ * typeString(String phrase, int typeSpeed) - types out a String waiting typeSpeed milliseconds before writing next letter
+ * Blink(pin, interval) - turns pin power ON/OFF at every interval milliseconds
+ ---------------------------------------------------*/
 #define letterArrayLength 100
 
 void initialize(int baud) { //so that you don't have to write Serial.begin(baud)
@@ -5,15 +15,14 @@ void initialize(int baud) { //so that you don't have to write Serial.begin(baud)
 
 }
 
-void tab(int tabNumber) { //tabs the Serial Monitor by tabNumber space(s)
-  for (int tabStart = 0; tabStart < tabNumber; tabStart++) {
+void enter(int enterNumber) { //tabs the Serial Monitor by tabNumber space(s)
+  for (int enterStart = 0; tabStart < tabNumber; tabStart++) {
     Serial.println("");
 
   }
 }
 
-void typeString(String phrase) {
-  int typeSpeed = 100; //time to wait in milliseconds before typing next letter
+void typeString(String phrase, int typeSpeed) {
   char letters [letterArrayLength] {}; //array to store chars in "phrase"
   phrase.toCharArray(letters, letterArrayLength); //Converts all chars in "phrase" to chars in array "letters"
   int phraseLength = phrase.length(); //sets int phraseLength to the length of parameter "phrase"
